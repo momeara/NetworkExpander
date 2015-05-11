@@ -1,23 +1,19 @@
 package org.bkslab.NetworkExpander.internal;
 
 import java.awt.Color;
-//import java.util.Collection;
 import org.cytoscape.work.TaskMonitor;
 import org.cytoscape.view.model.CyNetworkView;
-import org.cytoscape.view.model.CyNetworkViewTask;
+import org.cytoscape.view.presentation.property.BasicVisualLexicon;
+import org.cytoscape.task.AbstractNetworkViewTask;
 
-public class CreateNetworkExpanderTask extends AbstractNetworkViewTask {
+public class NetworkExpanderTask extends AbstractNetworkViewTask {
 
-	private CyNetworkView view;
-	
-	public CreateNetworkExpanderTask(CyNetworkView view) {
-		this.view = view;
+	public NetworkExpanderTask(CyNetworkView view) {
+		super(view);
 	}
 	
-	public creatTaskIterator(CyNetworkView view){
-	
 	@Override
-	public void run(TaskMonitor taskMonitor) throws Exception {
+	public void run(TaskMonitor taskMonitor) {
 		if(view == null){
 			return;
 		}

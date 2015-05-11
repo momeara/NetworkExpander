@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-Description: OverviewGiven a selection of query nodes, the Netw
+ orkExpander App expands the network by adding additional nodes and ed
+ ges connecting with the query nodes obtained from a web server. Workf
+ lowHave existing networkSelect a set of nodesRight-click on node (or 
+ use Apps menu)Send list of keys (node names?) to serverGet back JSON 
+ file with edges (and potentially node information)Adjust expansion ne
+ twork to filterquery/query, query/non-query, and/or non-query/non-que
+ ry edgesfilter expansion by thresholdNetwork Server ConfigurationExpa
+ nsion network data retrieved by a REST/JSON web API. Using the syntax
+  for the linkout query, a cytoscape.js elements JSON file is returned
+  and merged with the active network using the node name key.
+Bundle-SymbolicName: org.bkslab.network-expander
+Built-By: momeara
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1431362076746
+Bundle-DocURL: www.bkslab.org
+Bundle-Vendor: The Brian K. Shoichet Lab at UCSF
+Import-Package: org.cytoscape.service.util;version="[3.1,4)",org.cytos
+ cape.task;version="[3.1,4)",org.cytoscape.view.model;version="[3.1,4)
+ ",org.cytoscape.view.presentation.property;version="[3.1,4)",org.cyto
+ scape.work;version="[3.1,4)",org.osgi.framework;version="[1.5,2)"
+Tool: Bnd-1.15.0
+Bundle-Version: 1.0
+Bundle-Name: NetworkExpander
+Bundle-Activator: org.bkslab.NetworkExpander.internal.CyActivator
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_45
+
