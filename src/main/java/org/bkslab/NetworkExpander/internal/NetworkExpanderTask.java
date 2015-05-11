@@ -1,56 +1,42 @@
 package org.bkslab.NetworkExpander.internal;
 
-import java.awt.Color;
-import org.cytoscape.work.TaskMonitor;
-import org.cytoscape.view.model.CyNetworkView;
-import org.cytoscape.view.presentation.property.BasicVisualLexicon;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.cytoscape.model.CyNetwork;
+import org.cytoscape.model.CyNode;
+import org.cytoscape.model.CyTableUtil;
 import org.cytoscape.task.AbstractNetworkViewTask;
+import org.cytoscape.view.model.CyNetworkView;
+import org.cytoscape.work.TaskMonitor;
+
+
+
+
 
 public class NetworkExpanderTask extends AbstractNetworkViewTask {
 
 	public NetworkExpanderTask(CyNetworkView view) {
 		super(view);
 	}
-	
+
 	@Override
 	public void run(TaskMonitor taskMonitor) {
-		if(view == null){
+		if (view == null) {
 			return;
 		}
-	
-    	// Set the background of current view to RED 	
-    	view.setVisualProperty(BasicVisualLexicon.NETWORK_BACKGROUND_PAINT, Color.red);
-    	view.updateView();
+
+		CyNetwork net = view.getModel();
+		List<CyNode> nodes = CyTableUtil.getNodesInState(net, "selected", true);
 		
-//		List<CyIdentifiable> nodeList = get_selected_nodes(this.view);
-//		
-//		// Set name for new nodes
-//		myNet.getRow(node1).set(CyNetwork.NAME, "Node1");
-//		myNet.getRow(node2).set(CyNetwork.NAME, "Node2");
+		List<String> node_names = new ArrayList<String>();
+
+		Iterator<CyNode> it = nodes.iterator();
+		while (it.hasNext()) {
+			CyNode node = it.next();
+			node_names.add(net.getRow(node).get("name", String.class));
+		}
 	}
 
-//	// Get all of the selected nodes
-//	// from https://github.com/RBVI/structureViz2/blob/master/src/main/java/edu/ucsf/rbvi/structureViz2/internal/tasks/AlignStructuresTaskFactory.java
-//	public List<CyIdentifiable> get_selected_nodes(CyNetworkView netView) {
-//		List<CyIdentifiable> nodeList = new ArrayList<CyIdentifiable>();
-//		nodeList.addAll(CyTableUtil.getNodesInState(netView.getModel(), CyNetwork.SELECTED, true));
-//		return nodeList;
-//	}
-	
-
 }
-
-//  // To get a reference of CyNetworkFactory at CyActivator class of the App
-//  CyNetworkFactory networkFactory = getService(bc, CyNetworkFactory.class);
-//
-//  // Add two nodes to the network
-//  CyNode node1 = myNet.addNode();
-//  CyNode node2 = myNet.addNode();
-//                
-//  // Set name for new nodes
-//  myNet.getRow(node1).set(CyNetwork.NAME, "Node1");
-//  myNet.getRow(node2).set(CyNetwork.NAME, "Node2");
-//                
-//  // Add an edge
-//  myNet.addEdge(node1, node2, true);
-

@@ -13,13 +13,13 @@ Bundle-Description: OverviewGiven a selection of query nodes, the Netw
 Bundle-SymbolicName: org.bkslab.network-expander
 Built-By: momeara
 Bundle-ManifestVersion: 2
-Bnd-LastModified: 1431362076746
+Bnd-LastModified: 1431368347285
 Bundle-DocURL: www.bkslab.org
 Bundle-Vendor: The Brian K. Shoichet Lab at UCSF
-Import-Package: org.cytoscape.service.util;version="[3.1,4)",org.cytos
- cape.task;version="[3.1,4)",org.cytoscape.view.model;version="[3.1,4)
- ",org.cytoscape.view.presentation.property;version="[3.1,4)",org.cyto
- scape.work;version="[3.1,4)",org.osgi.framework;version="[1.5,2)"
+Import-Package: javax.swing,org.cytoscape.model;version="[3.1,4)",org.
+ cytoscape.service.util;version="[3.1,4)",org.cytoscape.task;version="
+ [3.1,4)",org.cytoscape.view.model;version="[3.1,4)",org.cytoscape.wor
+ k;version="[3.1,4)",org.osgi.framework;version="[1.5,2)"
 Tool: Bnd-1.15.0
 Bundle-Version: 1.0
 Bundle-Name: NetworkExpander

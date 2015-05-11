@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>NetworkExpander</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-	</buildSpec>
-	<natures>
-	</natures>
+  <name>network-expander</name>
+  <comment>Overview
+Given a selection of query nodes, the NetworkExpander App expands the network by adding additional nodes and edges connecting with the query nodes obtained from a web server. 
+
+Workflow
+Have existing network
+Select a set of nodes
+Right-click on node (or use Apps menu)
+Send list of keys (node names?) to server
+Get back JSON file with edges (and potentially node information)
+Adjust expansion network to filter
+query/query, query/non-query, and/or non-query/non-query edges
+filter expansion by threshold
+
+Network Server Configuration
+Expansion network data retrieved by a REST/JSON web API. Using the syntax for the linkout query, a cytoscape.js elements JSON file is returned and merged with the active network using the node name key. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.m2e.core.maven2Builder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.m2e.core.maven2Nature</nature>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
 </projectDescription>
